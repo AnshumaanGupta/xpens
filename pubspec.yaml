@@ -1,0 +1,37 @@
+name: xpens
+description: "A new Flutter project."
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.4 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.19.0
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+  flutter_lints: ^3.0.0
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/logo.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logo.png
+    - assets/images/basket.png
+  fonts:
+    - family: QuickKiss
+      fonts:
+        - asset: assets/fonts/QuickKiss.ttf
+    - family: Finance
+      fonts:
+        - asset: assets/fonts/Finance.ttf
