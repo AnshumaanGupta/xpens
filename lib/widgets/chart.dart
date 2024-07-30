@@ -4,6 +4,7 @@ import 'package:xpens/widgets/transaction_list.dart';
 import '../models/transaction.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
+import './chart_bar.dart';
 
 class Chart extends StatelessWidget {
   //const Chart({super.key});
@@ -23,7 +24,13 @@ class Chart extends StatelessWidget {
       }
       print(DateFormat.E().format(iday));
       print(famount);
-      return {'day': DateFormat.E().format(iday).substring(0,1), 'amount': famount};
+      return {'day': DateFormat.E(), 'amount': famount};
+    });
+  }
+
+  double get totalSpending {
+    return groupedTransactionValues.fold(0.0, (sum, item) {
+      return sum + (item['amount'] as double);
     });
   }
 
@@ -32,8 +39,17 @@ class Chart extends StatelessWidget {
     return Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
-      child: Row(
-        children: [groupedTransactionValues.map((){}).toList();],
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: groupedTransactionValues.map((data) {
+            return ChartBar(
+                data['day'].toString().substring(0, 1),
+                data['amount'] as double,
+                (data['amount'] as double) / totalSpending);
+          }).toList(),
+        ),
       ),
     );
   }
