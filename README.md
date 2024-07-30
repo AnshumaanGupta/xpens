@@ -13,9 +13,8 @@ The **Xpens** is a Flutter-based application designed to help you keep track of 
 
 ## Screenshots
 
-![Home Screen](screenshots/home_screen.png)
-![Add Transaction](screenshots/add_transaction.png)
-![7 Days Chart](screenshots/7_days_chart.png)
+![Home Screen](screenshots/ss1.png)
+![Add Transaction](screenshots/ss2.png)
 
 ## Installation
 
